@@ -29,7 +29,7 @@
     DB_PORT=3306
     DB_DATABASE= nama_database
     DB_USERNAME= username_phpMyAdmin (jika tidak ada/default diisi **root**)
-    DB_PASSWORD= password_phpMyAdmin (jika tidak ada/default tidak usah usah diisi/kosong)
+    DB_PASSWORD= password_phpMyAdmin (jika tidak ada/default tidak usah diisi/kosong)
    ```
 6. Mengiinisialisasi **Key Generate** laravel dengan cara `php artisan key:generate` pada command prompt
 7. Setelah itu melakukan config cache dengan cara `php artisan config:cache` pada command prompt
