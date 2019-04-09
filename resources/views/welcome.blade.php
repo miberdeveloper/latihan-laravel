@@ -59,8 +59,24 @@
             }
 
             .m-b-md {
-                margin-bottom: 30px;
+                margin-bottom: 10px;
             }
+
+            .title a {
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 20px;
+                text-decoration: none;
+                background: blue;
+                color: white;
+                padding: 5px 100px;
+                border-radius: 5px;
+                transition: 0.3s ease-in;
+            }
+            .title a:hover {
+                padding: 5px 150px;
+                transition: 0.3s ease-in;
+            }
+
         </style>
     </head>
     <body>
@@ -82,6 +98,8 @@
             <div class="content">
                 <div class="title m-b-md">
                     Laravel
+                    <br>
+                    <a href="{{ route('mahasiswa.index') }}">CRUD MAHASISWA</a>
                 </div>
 
                 <div class="links">
