@@ -9,7 +9,7 @@
    - `nama : varchar(255)`
    - `alamat : varchar(255)`
    - `nomer_hp : varchar(15)`
-
+4. Atau mengimport database yang terdapat pada file, nama database `crud_laravel.sql`
 
 ## Cara menggunakan file laravel
 1. Mengclone/mendownload project ini ( [Tutorial github](https://www.petanikode.com/tutorial/git/) )

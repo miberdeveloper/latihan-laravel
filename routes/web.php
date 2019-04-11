@@ -19,14 +19,14 @@ Route::get('/mahasiswa', 'MahasiswaController@index')->name('mahasiswa.index');
 
 // Membuat data / Insert
 Route::get('/mahasiswa/create', 'MahasiswaController@create')->name('mahasiswa.create');
+Route::get('/mahasiswa/{mahasiswa}/edit', 'MahasiswaController@edit')->name('mahasiswa.edit');
 Route::post('/mahasiswa', 'MahasiswaController@store')->name('mahasiswa.store');
 
 // Mengedit data / Insert
-Route::get('/mahasiswa/{mahasiswa}/edit', 'MahasiswaController@edit')->name('mahasiswa.edit');
 Route::put('/mahasiswa/{mahasiswa}', 'MahasiswaController@update')->name('mahasiswa.update');
+Route::delete('/mahasiswa/{mahasiswa}', 'MahasiswaController@destroy')->name('mahasiswa.destroy');
 
 // Menghapus data
-Route::delete('/mahasiswa/{mahasiswa}', 'MahasiswaController@destroy')->name('mahasiswa.destroy');
 
 // Bisa menggunakan yang dibawah
 // Route::resource('mahasiswa', 'MashasiswaController');

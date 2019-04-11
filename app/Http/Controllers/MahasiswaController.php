@@ -16,8 +16,8 @@ class MahasiswaController extends Controller
      */
     public function index()
     {
-        $data = Mahasiswa::all(); // Memanggil semua data pada model/tabel mahasiswa
-        return view('mahasiswa.index', compact('data'));
+        $mahasiswa = Mahasiswa::all(); // Memanggil semua data pada model/tabel mahasiswa
+        return view('mahasiswa.index', compact('mahasiswa'));
     }
 
     /**
@@ -38,7 +38,14 @@ class MahasiswaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Mahasiswa::create([
+            'nama' => $request->nama,
+            'alamat' => $request->alamat,
+            'nomer_hp' => $request->nomer_hp,
+        ]);
+
+        // kode dibawah berarti dia kembali ke index mahasiswa
+        return redirect()->route('mahasiswa.index');
     }
 
     /**
@@ -60,8 +67,8 @@ class MahasiswaController extends Controller
      */
     public function edit($id)
     {
-        $data = Mahasiswa::findOrFail($id); // mencari data berdasarkan ID
-        return view('mahasiswa.edit', compact('data'));
+        $mahasiswa = Mahasiswa::findOrFail($id); // mencari data berdasarkan ID
+        return view('mahasiswa.edit', compact('mahasiswa'));
     }
 
     /**
@@ -73,7 +80,12 @@ class MahasiswaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $mahasiswa = Mahasiwa::findOrFail($id);
+
+        // mengupdate dan menyimpan semua data pada tampilan yang terdapat didalam form
+        $mahasiswa->update($request->all());
+
+        return redirect()->route('mahasiswa.index');
     }
 
     /**
@@ -84,6 +96,9 @@ class MahasiswaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // mencari data bedasarkan ID, kemudian melakukan penghapusan
+        Mahasiswa::destroy($id);
+
+        return redirect()->route('mahasiswa.index');
     }
 }
